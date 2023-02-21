@@ -8,4 +8,4 @@ Nama Kelompok:
 -Umardani
 -Lazarus Doni Irawan
 
-link Test Plan Documment: https://s.id/1A5rN
+link Test Plan Documment: https://s.id/TestCaseKelompok6
