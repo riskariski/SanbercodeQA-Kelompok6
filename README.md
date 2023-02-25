@@ -1,5 +1,5 @@
-# SanbercodeQA - Kelompok 6
-## Tugas Akhir - SanbercodeQA Batch 42
+# SanbercodeQA - SanbercodeQA Batch 42
+## Tugas Akhir - Kelompok 6
 
 ### Nama Anggota Kelompok : 
 <ul>
