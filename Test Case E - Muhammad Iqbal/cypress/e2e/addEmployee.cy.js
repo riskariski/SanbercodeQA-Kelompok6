@@ -101,4 +101,14 @@ describe('Add Employee', () => {
     cy.get('.oxd-grid-item > .oxd-input-group > .oxd-text').should('be.visible').wait(waiting_time)  // Validates
     cy.wait(1000) // Jeda
   })
+
+  it('TC-E10 : Gagal Tambah Data "Employee"  | Invalid Image Type', () => {
+    auth.login(data.url, data.data_login.username, data.data_login.password)     // Login
+    cy.GoToAddEmployee()     // Navigate to Add Employee
+    entri = data.data_users[9]     // Commands Add Data
+    crud.create_with_images(entri.First_Name, entri.Middle_Name, entri.Last_Name, entri.Employee_Id, entri.images)
+    cy.getClick('.oxd-button--secondary')     // Save Data
+    cy.get('.oxd-text--toast-title').should('be.visible').wait(waiting_time)     // Validates
+    cy.wait(1000) // Jeda
+  })
 })

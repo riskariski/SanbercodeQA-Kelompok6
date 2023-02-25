@@ -113,7 +113,7 @@
             "Employee_Id": 105,
             "username": "",
             "password": "@Password123",
-            "images" : "@Password123"
+            "images" : ""
         },
         {
             "id" : 11,
@@ -121,9 +121,9 @@
             "Middle_Name": "MID",
             "Last_Name": "LAST",
             "Employee_Id": 105,
-            "username": "",
+            "username": "USERNAMEKU",
             "password": "",
-            "images" : "@Password123"
+            "images" : ""
         },
         {
             "id" : 12,
