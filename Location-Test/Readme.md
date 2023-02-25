@@ -12,3 +12,6 @@ Test Case :
   TC-C08 - Verify Success Delete Location - With selecting some data
   TC-C09 - Verify Success Search Data - Record Found
   TC-C10 - Verify Success Search Data - No Records Found
+
+link screenshot :
+https://docs.google.com/document/d/1HqM3QAO_jmhUmSmHQhq_plJHH9PJ_v3pX_WskTvOO1s/edit?usp=sharing
