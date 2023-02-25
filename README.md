@@ -1,4 +1,4 @@
-# SanbercodeQA - SanbercodeQA Batch 42
+# SanbercodeQA Batch 42
 ## Tugas Akhir - Kelompok 6
 
 ### Nama Anggota Kelompok : 
