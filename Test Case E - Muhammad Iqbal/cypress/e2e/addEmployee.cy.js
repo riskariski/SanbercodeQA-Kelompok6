@@ -111,4 +111,38 @@ describe('Add Employee', () => {
     cy.get('.oxd-text--toast-title').should('be.visible').wait(waiting_time)     // Validates
     cy.wait(1000) // Jeda
   })
+ 
+  it('TC-E11 : Gagal Tambah Data "Employee"  | Invalid Username', () => {
+    auth.login(data.url, data.data_login.username, data.data_login.password)     // Login
+    cy.GoToAddEmployee()     // Navigate to Add Employee
+    entri = data.data_users[4]     // Commands Add Data
+    crud.create_with_detailed(entri.First_Name, entri.Middle_Name, entri.Last_Name, entri.Employee_Id, entri.username, entri.password)
+    cy.getClick(':nth-child(2) > :nth-child(2) > .oxd-radio-wrapper > label > .oxd-radio-input')  // Disable Status
+    cy.getClick('.oxd-button--secondary')     // Save Data
+    cy.get('.oxd-text--toast-title').should('be.visible').wait(waiting_time)   // Validates
+    cy.wait(1000) // Jeda
+  })
+
+  it('TC-E11 : Gagal Tambah Data "Employee"  | Invalid Password', () => {
+    auth.login(data.url, data.data_login.username, data.data_login.password)     // Login
+    cy.GoToAddEmployee()     // Navigate to Add Employee
+    entri = data.data_users[4]     // Commands Add Data
+    crud.create_with_detailed(entri.First_Name, entri.Middle_Name, entri.Last_Name, entri.Employee_Id, entri.username, entri.password)
+    cy.getClick(':nth-child(2) > :nth-child(2) > .oxd-radio-wrapper > label > .oxd-radio-input')  // Disable Status
+    cy.getClick('.oxd-button--secondary')     // Save Data
+    cy.get('.oxd-text--toast-title').should('be.visible').wait(waiting_time)   // Validates
+    cy.wait(1000) // Jeda
+  })
+
+  it('TC-E11 : Gagal Tambah Data "Employee"  | Invalid Confirm Password', () => {
+    auth.login(data.url, data.data_login.username, data.data_login.password)     // Login
+    cy.GoToAddEmployee()     // Navigate to Add Employee
+    entri = data.data_users[4]     // Commands Add Data
+    crud.create_with_detailed(entri.First_Name, entri.Middle_Name, entri.Last_Name, entri.Employee_Id, entri.username, entri.password)
+    cy.getClick(':nth-child(2) > :nth-child(2) > .oxd-radio-wrapper > label > .oxd-radio-input')  // Disable Status
+    cy.getTyped('.oxd-grid-2 > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input', "@Password123456") // Invalid Password
+    cy.getClick('.oxd-button--secondary')     // Save Data
+    cy.get('.oxd-text--toast-title').should('be.visible').wait(waiting_time)   // Validates
+    cy.wait(1000) // Jeda
+  })
 })
