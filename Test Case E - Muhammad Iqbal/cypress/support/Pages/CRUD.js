@@ -5,8 +5,7 @@ class Crud {
         cy.getTyped('.--name-grouped-field > :nth-child(1) > :nth-child(2) > .oxd-input', First_Name)
         cy.getTyped(':nth-child(2) > :nth-child(2) > .oxd-input', Middle_Name)
         cy.getTyped(':nth-child(3) > :nth-child(2) > .oxd-input', Last_Name)
-        cy.getTyped ('.oxd-grid-item > .oxd-input-group > :nth-child(2) > .oxd-input', Employee_Id)
-
+        cy.getTyped('.oxd-grid-item > .oxd-input-group > :nth-child(2) > .oxd-input', Employee_Id)
     }
 
     create_with_images(First_Name, Middle_Name, Last_Name, Employee_Id, Images) {
