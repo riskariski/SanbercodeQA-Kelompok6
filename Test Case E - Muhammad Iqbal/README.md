@@ -1,4 +1,4 @@
-# Test Cast E - Add Employee
+# Test Case E - Add Employee
 <table>
 <tr>
 <td>Object</td>
