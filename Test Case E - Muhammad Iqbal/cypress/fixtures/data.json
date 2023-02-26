@@ -1,0 +1,139 @@
+{
+    "url": "https://opensource-demo.orangehrmlive.com/",
+    "data_login": {
+        "username": "Admin",
+        "password": "admin123"
+    },
+    "data_users": [
+        {
+            "id" : 0,
+            "First_Name": "Scarlett",
+            "Middle_Name": "J",
+            "Last_Name": "Johanson",
+            "Employee_Id": 99,
+            "username": "",
+            "password": "",
+            "images" : ""
+        },
+        {
+            "id" : 1,
+            "First_Name": "Leonardo",
+            "Middle_Name": "D",
+            "Last_Name": "Caprio",
+            "Employee_Id": 100,
+            "username": "",
+            "password": "",
+            "images" : "user.png"
+        },
+        {
+            "id" : 2,
+            "First_Name": "Robert",
+            "Middle_Name": "Downey",
+            "Last_Name": "Jr",
+            "Employee_Id": 101,
+            "username": "ironman",
+            "password": "@Password123",
+            "images" : ""
+        },
+        {
+            "id" : 3,
+            "First_Name": "Robert",
+            "Middle_Name": "Downey",
+            "Last_Name": "Jr",
+            "Employee_Id": 102,
+            "username": "ironman2",
+            "password": "@Password123",
+            "images" : "ironman.jpeg"
+        },
+        {
+            "id" : 4,
+            "First_Name": "Samuel",
+            "Middle_Name": "L",
+            "Last_Name": "Jackson",
+            "Employee_Id": 103,
+            "username": "NickFury",
+            "password": "@Password123",
+            "images" : ""
+        },
+        {
+            "id" : 5,
+            "First_Name": "Samuel",
+            "Middle_Name": "L",
+            "Last_Name": "Jackson",
+            "Employee_Id": 104,
+            "username": "NickFury2",
+            "password": "@Password123",
+            "images" : "nickfury.jpg"
+        },
+        {
+            "id" : 6,
+            "First_Name": "",
+            "Middle_Name": "MID",
+            "Last_Name": "LAST",
+            "Employee_Id": 105,
+            "username": "USERNAMEKU",
+            "password": "@Password123",
+            "images" : ""
+        },
+        {
+            "id" : 7,
+            "First_Name": "FIRST",
+            "Middle_Name": "MID",
+            "Last_Name": "",
+            "Employee_Id": 105,
+            "username": "USERNAMEKU",
+            "password": "@Password123",
+            "images" : ""
+        },
+        {
+            "id" : 8,
+            "First_Name": "FIRST",
+            "Middle_Name": "MID",
+            "Last_Name": "LAST",
+            "Employee_Id": 99,
+            "username": "USERNAMEKU",
+            "password": "@Password123",
+            "images" : ""
+        },
+        {
+            "id" : 9,
+            "First_Name": "",
+            "Middle_Name": "",
+            "Last_Name": "",
+            "Employee_Id": 105,
+            "username": "USERNAMEKU",
+            "password": "@Password123",
+            "images" : "text.txt"
+        },
+        {
+            "id" : 10,
+            "First_Name": "FIRST",
+            "Middle_Name": "MID",
+            "Last_Name": "LAST",
+            "Employee_Id": 105,
+            "username": "",
+            "password": "@Password123",
+            "images" : ""
+        },
+        {
+            "id" : 11,
+            "First_Name": "FIRST",
+            "Middle_Name": "MID",
+            "Last_Name": "LAST",
+            "Employee_Id": 105,
+            "username": "USERNAMEKU",
+            "password": "",
+            "images" : ""
+        },
+        {
+            "id" : 12,
+            "First_Name": "FIRST",
+            "Middle_Name": "MID",
+            "Last_Name": "LAST",
+            "Employee_Id": 105,
+            "username": "USERNAMEKU",
+            "password": "@Password123",
+            "images" : ""
+        }
+    ]
+}
