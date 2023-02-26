@@ -25,4 +25,9 @@
 <td>:</td>
 <td><a href="https://github.com/Miqbal20">Muhammad Iqbal</a></td>
 </tr>
+<tr>
+<td>Document Plan</td>
+<td>:</td>
+<td><a href="https://s.id/TestCaseKelompok6">Dokumen</a></td>
+</tr>
 </table>
