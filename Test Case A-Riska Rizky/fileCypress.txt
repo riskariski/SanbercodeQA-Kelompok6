@@ -1,0 +1,542 @@
+---TC_A01---
+
+/// <reference types="cypress" />
+
+describe("Success Login", () => {
+  it("Valid Username Valid Password", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("Admin");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("admin123");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.contains("Dashboard");
+    cy.get(".oxd-brand-banner > img").should("be.visible");
+    cy.get(".oxd-userdropdown-tab").should("be.visible");
+    cy.get(
+      ":nth-child(1) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text"
+    ).should("contain.text", "Time at Work");
+    cy.get(
+      ":nth-child(2) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text"
+    ).should("contain.text", "My Actions");
+  });
+});
+
+
+
+---TC_A02---
+/// <reference types="cypress" />
+
+describe("Success Login", () => {
+  it("Valid Username (Uppercase) Valid Password", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("ADMIN");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("admin123");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.contains("Dashboard");
+    cy.get(".oxd-brand-banner > img").should("be.visible");
+    cy.get(".oxd-userdropdown-tab").should("be.visible");
+    cy.get(
+      ":nth-child(1) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text"
+    ).should("contain.text", "Time at Work");
+    cy.get(
+      ":nth-child(2) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text"
+    ).should("contain.text", "My Actions");
+  });
+});
+
+
+
+---TC_A03---
+/// <reference types="cypress" />
+
+describe("Failed Login", () => {
+  it("Valid Username Valid Password (Uppercase) ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("Admin");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("ADMIN123");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.get(".oxd-alert-content").should("be.visible");
+    cy.get(".oxd-alert-content > .oxd-text").should(
+      "contain.text",
+      "Invalid credentials"
+    );
+  });
+});
+
+
+
+---TC_A04---
+/// <reference types="cypress" />
+
+describe("Failed Login", () => {
+  it("Valid Username (Uppercase) Valid Password (Uppercase) ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("ADMIN");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("ADMIN123");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.get(".oxd-alert-content").should("be.visible");
+    cy.get(".oxd-alert-content > .oxd-text").should(
+      "contain.text",
+      "Invalid credentials"
+    );
+  });
+});
+
+
+
+---TC_A05---
+/// <reference types="cypress" />
+
+describe("Failed Login", () => {
+  it("Valid Username Invalid Password  ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("Admin");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("adm123");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.get(".oxd-alert-content").should("be.visible");
+    cy.get(".oxd-alert-content > .oxd-text").should(
+      "contain.text",
+      "Invalid credentials"
+    );
+  });
+});
+
+
+
+---TC_A06---
+/// <reference types="cypress" />
+
+describe("Failed Login", () => {
+  it("Invalid Username valid Password  ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("Adm");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("Admin123");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.get(".oxd-alert-content").should("be.visible");
+    cy.get(".oxd-alert-content > .oxd-text").should(
+      "contain.text",
+      "Invalid credentials"
+    );
+  });
+});
+
+
+
+---TC_A07---
+/// <reference types="cypress" />
+
+describe("Failed Login", () => {
+  it("Invalid Username Invalid Password  ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("Adm");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("Adm123");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.get(".oxd-alert-content").should("be.visible");
+    cy.get(".oxd-alert-content > .oxd-text").should(
+      "contain.text",
+      "Invalid credentials"
+    );
+  });
+});
+
+
+
+---TC_A08---
+/// <reference types="cypress" />
+
+describe("Failed Login", () => {
+  it("Blank Username Valid Password  ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).should("be.empty");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("admin123");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.get(":nth-child(2) > .oxd-input-group > .oxd-text").should(
+      "contain.text",
+      "Required"
+    );
+  });
+});
+
+
+
+---TC_A09---
+/// <reference types="cypress" />
+
+describe("Failed Login", () => {
+  it("Valid Username Blank Password  ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("Admin");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).should("be.empty");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.get(":nth-child(3) > .oxd-input-group > .oxd-text").should(
+      "contain.text",
+      "Required"
+    );
+  });
+});
+
+
+
+---TC_010---
+/// <reference types="cypress" />
+
+describe("Failed Login", () => {
+  it("Blank Username Blank Password  ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).should("be.empty");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).should("be.empty");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.get(":nth-child(2) > .oxd-input-group > .oxd-text").should(
+      "contain.text",
+      "Required"
+    );
+    cy.get(":nth-child(3) > .oxd-input-group > .oxd-text").should(
+      "contain.text",
+      "Required"
+    );
+  });
+});
+
+
+
+---TC_011---
+/// <reference types="cypress" />
+
+describe("Forgot Password", () => {
+  it("Reset Password  ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(".orangehrm-login-forgot > .oxd-text", { timeout: 2000 }).click();
+
+    cy.get(".oxd-text--h6").should("contain.text", "Reset Password");
+    cy.get(".oxd-label").should("contain.text", "Username");
+    cy.get(".oxd-input").type("riskariski");
+    cy.get(".oxd-button--secondary", { timeout: 2000 }).click();
+
+    cy.get(".oxd-text--h6").should(
+      "contain.text",
+      "Reset Password link sent successfully"
+    );
+    cy.get(".orangehrm-card-note--background").should("be.visible");
+    cy.get(".orangehrm-sub-title").should("contain.text", "Note:");
+  });
+});
+
+
+
+---TC_A012---
+/// <reference types="cypress" />
+
+describe("Forgot Password", () => {
+  it("Cancel ", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+    cy.get(".orangehrm-login-forgot > .oxd-text").should(
+      "contain.text",
+      "Forgot your password?"
+    );
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(".orangehrm-login-forgot > .oxd-text", { timeout: 2000 }).click();
+
+    cy.get(".oxd-text--h6").should("contain.text", "Reset Password");
+    cy.get(".oxd-label").should("contain.text", "Username");
+    cy.get(".oxd-button--ghost", { timeout: 2000 }).click();
+
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+  });
+});
+
+
+
+---TC_A013---
+/// <reference types="cypress" />
+
+describe("Logout", () => {
+  it("Success Logout", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/ ");
+    cy.url().should("include", "orangehrm");
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+    cy.get(".oxd-text--h5").should("contain.text", "Login");
+
+    cy.get(
+      ":nth-child(2) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Username");
+    cy.get(
+      ":nth-child(3) > .oxd-input-group > .oxd-input-group__label-wrapper > .oxd-label",
+      { timeout: 4000 }
+    ).should("contain.text", "Password");
+
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("Admin");
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input", {
+      timeout: 2000,
+    }).type("admin123");
+    cy.get(".oxd-button", { timeout: 2000 }).click();
+
+    cy.contains("Dashboard");
+    cy.get(".oxd-brand-banner > img").should("be.visible");
+    cy.get(
+      ":nth-child(1) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text"
+    ).should("contain.text", "Time at Work");
+    cy.get(
+      ":nth-child(2) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text"
+    ).should("contain.text", "My Actions");
+
+    cy.get(".oxd-userdropdown-tab", { timeout: 2000 }).click();
+    cy.get(":nth-child(4) > .oxd-userdropdown-link", { timeout: 2000 }).click();
+
+    cy.get(".orangehrm-login-branding > img").should("be.visible");
+    cy.get(".orangehrm-login-logo > img").should("be.visible");
+  });
+});
