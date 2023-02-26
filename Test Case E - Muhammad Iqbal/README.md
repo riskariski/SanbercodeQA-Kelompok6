@@ -28,6 +28,10 @@
 <tr>
 <td>Document Plan</td>
 <td>:</td>
-<td><a href="https://s.id/TestCaseKelompok6">Dokumen</a></td>
+<td><a href="https://s.id/TestCaseKelompok6">Google Sheet TestCaseKelompok6</a></td>
+</tr>
+<td>Documentation</td>
+<td>:</td>
+<td><a href="https://drive.google.com/drive/folders/1L0pZqAoeLtCqSg-7NlFIS1hTz_CZn94t?usp=share_link">Drive</a></td>
 </tr>
 </table>
